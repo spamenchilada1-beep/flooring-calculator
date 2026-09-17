@@ -1,71 +1,54 @@
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import './styles.css';
-
-function calculateFlooring(length, width, waste) {
-  const area = length * width;
-  const wasteFactor = 1 + waste / 100;
-  return { area, recommended: area * wasteFactor };
-}
+import { useState } from 'react'
+import { calculateFlooring, createCopyText } from './calculator'
+import './styles.css'
 
 function App() {
-  const [length, setLength] = useState('12');
-  const [width, setWidth] = useState('10');
-  const [waste, setWaste] = useState('10');
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState('');
-
-  function calculate() {
-    const l = Number(length), w = Number(width), wa = Number(waste);
-    if (!(l > 0) || !(w > 0) || wa < 0 || wa > 50) {
-      setError('Enter positive room dimensions and a waste allowance from 0% to 50%.');
-      setResult(null);
-      return;
-    }
-    setError('');
-    setResult(calculateFlooring(l, w, wa));
+  const [length, setLength] = useState('12')
+  const [width, setWidth] = useState('10')
+  const [coverage, setCoverage] = useState('20')
+  const [result, setResult] = useState(null)
+  const [error, setError] = useState('')
+  const calculate = () => {
+    const next = calculateFlooring({ length, width, coverage })
+    if (next.errors.length) { setError(next.errors.join(' ')); setResult(null); return }
+    setError(''); setResult(next)
   }
-
-  function copyResults() {
-    if (!result) return;
-    navigator.clipboard?.writeText(`Flooring area: ${result.area.toFixed(2)} sq ft\nRecommended order: ${result.recommended.toFixed(2)} sq ft`);
+  const copyResults = async () => {
+    if (!result) return
+    await navigator.clipboard?.writeText(createCopyText({ length, width, coverage, result }))
   }
-
   return (
     <main className="page">
       <header className="hero">
-        <div className="brand">
-          <img className="brand-logo" src="/athena-calculators-logo.jpg" alt="ATHENA Calculators" />
-        </div>
+        <div className="brand"><img className="brand-logo" src="/athena-calculators-logo.jpg" alt="ATHENA Calculators" /></div>
         <p className="eyebrow">FLOORING CALCULATOR</p>
         <h1>How Much Flooring Do I Need?</h1>
-        <p className="intro">Estimate square footage and recommended material for flooring projects, with a built-in waste allowance.</p>
+        <p className="intro">Estimate flooring square footage, add a planning allowance, and calculate how many boxes to buy.</p>
       </header>
-
       <section className="card">
         <div className="grid">
-          <label>Room length (ft)<input type="number" min="0" step="0.1" value={length} onChange={e => setLength(e.target.value)} /></label>
-          <label>Room width (ft)<input type="number" min="0" step="0.1" value={width} onChange={e => setWidth(e.target.value)} /></label>
-          <label>Waste allowance (%)<input type="number" min="0" max="50" step="1" value={waste} onChange={e => setWaste(e.target.value)} /></label>
+          <label>Room length (ft)<input aria-label="Room length" type="number" min="0" step="0.1" value={length} onChange={e => setLength(e.target.value)} /></label>
+          <label>Room width (ft)<input aria-label="Room width" type="number" min="0" step="0.1" value={width} onChange={e => setWidth(e.target.value)} /></label>
+          <label>Coverage per box (sq ft)<input aria-label="Box coverage" type="number" min="0" step="0.1" value={coverage} onChange={e => setCoverage(e.target.value)} /></label>
         </div>
         {error && <p className="error" role="alert">{error}</p>}
         <button onClick={calculate}>Calculate Flooring</button>
       </section>
-
       {result && <section className="results card" aria-live="polite">
-        <div className="result-main"><span>Recommended order</span><strong>{result.recommended.toFixed(2)} sq ft</strong></div>
-        <div className="result-row"><span>Room area</span><strong>{result.area.toFixed(2)} sq ft</strong></div>
-        <div className="result-row"><span>Waste allowance</span><strong>{waste}%</strong></div>
+        <div className="result-main"><span>Recommended order</span><strong>{result.boxes} boxes</strong></div>
+        <div className="result-row"><span>Floor area</span><strong>{result.roomArea.toFixed(1)} sq ft</strong></div>
+        <div className="result-row"><span>With 10% planning allowance</span><strong>{result.recommendedArea.toFixed(1)} sq ft</strong></div>
+        <div className="result-row"><span>Waste/extra material</span><strong>{result.wasteArea.toFixed(1)} sq ft</strong></div>
+        <div className="result-row"><span>Coverage per box</span><strong>{coverage} sq ft</strong></div>
         <button className="secondary" onClick={copyResults}>Copy Results</button>
       </section>}
-
       <section className="info">
         <h2>How it works</h2>
-        <p>Flooring area = length � width. Recommended material adds your waste allowance to help cover cuts, fitting, and normal material loss.</p>
-        <p><strong>Tip:</strong> For irregular rooms, divide the space into rectangles, calculate each section, then add the results together.</p>
+        <p>Floor area = length × width. ATHENA adds a 10% planning allowance for cuts and normal material loss, then rounds up to whole boxes based on the coverage you enter.</p>
+        <p><strong>Tip:</strong> Check the flooring manufacturer's box coverage because package sizes vary by product.</p>
       </section>
     </main>
-  );
+  )
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+export default App
