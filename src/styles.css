@@ -1,0 +1,24 @@
+:root { font-family: Arial, Helvetica, sans-serif; color: #13213a; background: #f5f7fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.page { width: min(760px, 92vw); margin: 0 auto; padding: 42px 0 64px; }
+.hero { text-align: center; }
+.brand { display: block; margin: 0 auto 26px; text-align: center; }
+.brand-logo { display: block; width: min(360px, 82vw); height: auto; margin: 0 auto; }
+.eyebrow { color: #b08a35; font-weight: 800; letter-spacing: .14em; font-size: .78rem; margin: 0 0 12px; }
+h1 { color: #13213a; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.05; margin: 0 auto 16px; overflow-wrap: anywhere; }
+.intro { color: #536078; max-width: 650px; margin: 0 auto 30px; line-height: 1.55; font-size: 1.05rem; }
+.card { background: white; border: 1px solid #dfe4ec; border-radius: 18px; padding: 26px; box-shadow: 0 8px 30px rgba(19,33,58,.07); margin-bottom: 20px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+label { display: grid; gap: 8px; color: #536078; font-weight: 700; font-size: .9rem; }
+input { width: 100%; padding: 13px 14px; border: 1px solid #cbd2dd; border-radius: 10px; font-size: 1rem; color: #13213a; }
+button { width: 100%; border: 0; border-radius: 10px; padding: 14px 18px; margin-top: 20px; background: #13213a; color: white; font-size: 1rem; font-weight: 800; cursor: pointer; }
+.error { color: #9b2c2c; background: #fff2f2; padding: 12px; border-radius: 10px; margin: 16px 0 0; }
+.result-main { text-align: center; padding-bottom: 22px; border-bottom: 1px solid #e4e8ef; }
+.result-main span, .result-row span { color: #536078; }
+.result-main strong { display: block; font-size: 2.2rem; margin-top: 7px; color: #13213a; }
+.result-row { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid #eef1f5; }
+.secondary { background: white; color: #13213a; border: 1px solid #cbd2dd; margin-top: 18px; }
+.info { color: #536078; line-height: 1.6; padding: 6px 4px; }
+.info h2 { color: #13213a; margin-bottom: 8px; }
+@media (max-width: 640px) { .page { padding-top: 28px; } .grid { grid-template-columns: 1fr; } .card { padding: 20px; } }
