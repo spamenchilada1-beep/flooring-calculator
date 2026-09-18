@@ -56,6 +56,29 @@ function App() {
         <h2>How it works</h2>
         <p>Floor area = length × width. ATHENA adds a 10% planning allowance for cuts and normal material loss, then rounds up to whole boxes based on the coverage you enter.</p>
         <p><strong>Tip:</strong> Check the flooring manufacturer's box coverage because package sizes vary by product.</p>
+
+        <h2>How much flooring do I need?</h2>
+        <p>
+          Measure the room length and width to get the floor area in square
+          feet. Enter the coverage printed on the flooring package so the
+          calculator can convert your recommended square footage into whole
+          boxes.
+        </p>
+
+        <h2>How much extra flooring should I order?</h2>
+        <p>
+          ATHENA uses a 10% planning allowance for cuts and normal material
+          loss. Your actual extra requirement can vary with the room layout,
+          pattern, product, and installation method, so confirm the amount
+          recommended by the flooring manufacturer when available.
+        </p>
+
+        <h2>Flooring calculator for remodeling projects</h2>
+        <p>
+          For multiple rooms, calculate each room separately and add the
+          recommended material amounts. Keep a record of the product, color,
+          lot information, and box coverage used for the order.
+        </p>
       </section>
       <nav aria-label="More ATHENA Calculators">
         <p><strong>More ATHENA Calculators:</strong> <a href="https://athena-public-platform.pages.dev/#tools">ATHENA Tools</a> · <a href="https://paint-calculator-5wq.pages.dev/">Paint Calculator</a> · <a href="https://contractor-pricing-calculator.pages.dev/">Contractor Pricing Calculator</a> · <a href="https://concrete-calculator-cic.pages.dev/">Concrete Calculator</a></p>
