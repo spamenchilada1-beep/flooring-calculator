@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createRoot } from 'react-dom/client'
 import { calculateFlooring, createCopyText } from './calculator'
 import './styles.css'
 
@@ -42,13 +43,27 @@ function App() {
         <div className="result-row"><span>Coverage per box</span><strong>{coverage} sq ft</strong></div>
         <button className="secondary" onClick={copyResults}>Copy Results</button>
       </section>}
+      <section className="affiliate-card" aria-label="Recommended flooring project supplies">
+        <p className="affiliate-label">PROJECT SUPPLIES</p>
+        <h2>Need supplies for your flooring project?</h2>
+        <p>Browse flooring tools, underlayment, installation supplies, and other project essentials on Amazon.</p>
+        <div className="affiliate-links">
+          <a href="https://www.amazon.com/s?k=flooring+installation+tools&tag=athena-20" target="_blank" rel="sponsored noopener">Shop flooring installation tools <span>(paid link)</span></a>
+          <a href="https://www.amazon.com/s?k=flooring+underlayment&tag=athena-20" target="_blank" rel="sponsored noopener">Shop flooring underlayment <span>(paid link)</span></a>
+        </div>
+      </section>
       <section className="info">
         <h2>How it works</h2>
         <p>Floor area = length × width. ATHENA adds a 10% planning allowance for cuts and normal material loss, then rounds up to whole boxes based on the coverage you enter.</p>
         <p><strong>Tip:</strong> Check the flooring manufacturer's box coverage because package sizes vary by product.</p>
       </section>
+      <footer>
+        <p>Free flooring calculator for practical planning.</p>
+        <p>As an Amazon Associate I earn from qualifying purchases.</p>
+        <a href="/privacy.html">Privacy Policy</a>
+      </footer>
     </main>
   )
 }
 
-export default App
+createRoot(document.getElementById('root')).render(<App />)
