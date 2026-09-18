@@ -44,9 +44,9 @@ function App() {
         <button className="secondary" onClick={copyResults}>Copy Results</button>
       </section>}
       <section className="affiliate-card" aria-label="Recommended flooring project supplies">
-        <p className="affiliate-label">PROJECT SUPPLIES</p>
-        <h2>Need supplies for your flooring project?</h2>
-        <p>Browse flooring tools, underlayment, installation supplies, and other project essentials on Amazon.</p>
+        <p className="affiliate-label">FLOORING TOOLS &amp; SUPPLIES</p>
+        <h2>Ready to install? Get the materials and tools next.</h2>
+        <p>Use your flooring estimate, then compare installation tools and underlayment on Amazon.</p>
         <div className="affiliate-links">
           <a href="https://www.amazon.com/s?k=flooring+installation+tools&tag=athena-20" target="_blank" rel="sponsored noopener">Shop flooring installation tools <span>(paid link)</span></a>
           <a href="https://www.amazon.com/s?k=flooring+underlayment&tag=athena-20" target="_blank" rel="sponsored noopener">Shop flooring underlayment <span>(paid link)</span></a>
