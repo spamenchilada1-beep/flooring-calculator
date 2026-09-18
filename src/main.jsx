@@ -57,6 +57,10 @@ function App() {
         <p>Floor area = length × width. ATHENA adds a 10% planning allowance for cuts and normal material loss, then rounds up to whole boxes based on the coverage you enter.</p>
         <p><strong>Tip:</strong> Check the flooring manufacturer's box coverage because package sizes vary by product.</p>
       </section>
+      <nav aria-label="More ATHENA Calculators">
+        <p><strong>More ATHENA Calculators:</strong> <a href="https://paint-calculator-5wq.pages.dev/">Paint Calculator</a> · <a href="https://contractor-pricing-calculator.pages.dev/">Contractor Pricing Calculator</a> · <a href="https://concrete-calculator-cic.pages.dev/">Concrete Calculator</a></p>
+      </nav>
+
       <footer>
         <p>Free flooring calculator for practical planning.</p>
         <p>As an Amazon Associate I earn from qualifying purchases.</p>
