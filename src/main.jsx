@@ -80,7 +80,8 @@ function App() {
           recommended material amounts. Keep a record of the product, color,
           lot information, and box coverage used for the order.
         </p>
-        <h2>More flooring planning help</h2>
+        <h2>Flooring planning tips</h2>
+        <p>Order enough material to cover the calculated area plus your selected waste allowance. Keep the product, color, lot information, and box coverage together when ordering.</p>
         <p>See the step-by-step guide: <a href="/flooring-calculator-square-feet">Flooring Calculator: Square Feet &amp; Boxes</a></p>
         <p>Need help converting square footage into boxes? Read the <a href="/how-many-boxes-of-flooring">flooring box guide</a>.</p>
       </section>
