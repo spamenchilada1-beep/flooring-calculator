@@ -13,6 +13,7 @@ function App() {
     const next = calculateFlooring({ length, width, coverage })
     if (next.errors.length) { setError(next.errors.join(' ')); setResult(null); return }
     setError(''); setResult(next)
+    window.gtag?.('event', 'calculator_completed', { calculator: 'flooring' })
   }
   const copyResults = async () => {
     if (!result) return
