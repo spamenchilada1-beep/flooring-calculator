@@ -82,6 +82,7 @@ function App() {
         </p>
         <h2>More flooring planning help</h2>
         <p>See the step-by-step guide: <a href="/flooring-calculator-square-feet.html">Flooring Calculator: Square Feet &amp; Boxes</a></p>
+        <p>Need help converting square footage into boxes? Read the <a href="/how-many-boxes-of-flooring.html">flooring box guide</a>.</p>
       </section>
       <nav aria-label="More ATHENA Calculators">
         <p><strong>More ATHENA Calculators:</strong> <a href="https://athena-public-platform.pages.dev/#tools">ATHENA Tools</a> · <a href="https://paint-calculator-5wq.pages.dev/">Paint Calculator</a> · <a href="https://contractor-pricing-calculator.pages.dev/">Contractor Pricing Calculator</a> · <a href="https://concrete-calculator-cic.pages.dev/">Concrete Calculator</a></p>
