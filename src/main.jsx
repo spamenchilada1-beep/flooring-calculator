@@ -49,8 +49,8 @@ function App() {
         <h2>Ready to install? Get the materials and tools next.</h2>
         <p>Use your flooring estimate, then compare installation tools and underlayment on Amazon.</p>
         <div className="affiliate-links">
-          <a href="https://www.amazon.com/s?k=flooring+installation+tools&tag=athena-flooring-20" target="_blank" rel="sponsored noopener">Shop flooring installation tools <span>(paid link)</span></a>
-          <a href="https://www.amazon.com/s?k=flooring+underlayment&tag=athena-flooring-20" target="_blank" rel="sponsored noopener">Shop flooring underlayment <span>(paid link)</span></a>
+          <a href="https://www.amazon.com/s?k=flooring+installation+tools&tag=athena-flooring-20" target="_blank" rel="sponsored noopener" onClick={() => window.gtag?.('event', 'affiliate_click', { program: 'amazon_associates', calculator: 'flooring', placement: 'installation_tools' })}>Shop flooring installation tools <span>(paid link)</span></a>
+          <a href="https://www.amazon.com/s?k=flooring+underlayment&tag=athena-flooring-20" target="_blank" rel="sponsored noopener" onClick={() => window.gtag?.('event', 'affiliate_click', { program: 'amazon_associates', calculator: 'flooring', placement: 'underlayment' })}>Shop flooring underlayment <span>(paid link)</span></a>
         </div>
       </section>
       <section className="info">
