@@ -8,3 +8,5 @@ User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://flooring-calculator.pages.dev/sitemap.xml
+
+# IndexNow notifications are used for URL discovery.
