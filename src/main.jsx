@@ -86,7 +86,7 @@ function App() {
         <p>Need help converting square footage into boxes? Read the <a href="/how-many-boxes-of-flooring">flooring box guide</a>.</p>
       </section>
       <nav aria-label="More ATHENA Calculators">
-        <p><strong>More ATHENA Calculators:</strong> <a href="https://athena-public-platform.pages.dev/#tools">ATHENA Tools</a> · <a href="https://paint-calculator-5wq.pages.dev/">Paint Calculator</a> · <a href="https://contractor-pricing-calculator.pages.dev/">Contractor Pricing Calculator</a> · <a href="https://concrete-calculator-cic.pages.dev/">Concrete Calculator</a></p>
+        <p><strong>More ATHENA Calculators:</strong> <a href="https://athena-public-platform.pages.dev/tools/">ATHENA Tools</a> · <a href="https://paint-calculator-5wq.pages.dev/">Paint Calculator</a> · <a href="https://contractor-pricing-calculator.pages.dev/">Contractor Pricing Calculator</a> · <a href="https://concrete-calculator-cic.pages.dev/">Concrete Calculator</a></p>
       </nav>
 
       <footer>
