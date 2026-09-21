@@ -1,0 +1,35 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "src/**"
+      - "public/**"
+      - "package.json"
+      - "sitemap.xml"
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify IndexNow of updated pages
+        env:
+          INDEXNOW_KEY: c3e5a7b9d123456789abcdef012345678
+        run: |
+          sleep 60
+          urls=(
+            "https://flooring-calculator.pages.dev/"
+            "https://flooring-calculator.pages.dev/flooring-calculator-square-feet"
+            "https://flooring-calculator.pages.dev/how-many-boxes-of-flooring"
+            "https://flooring-calculator.pages.dev/flooring-waste-calculator"
+          )
+          for url in "${urls[@]}"; do
+            code=$(curl -sS -G -o /dev/null -w "%{http_code}" \
+              "https://api.indexnow.org/indexnow" \
+              --data-urlencode "url=$url" \
+              --data-urlencode "key=$INDEXNOW_KEY")
+            echo "$code $url"
+          done
